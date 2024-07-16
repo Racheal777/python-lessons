@@ -25,8 +25,8 @@ def remove_contact(contacts):
 
 
 def add_note(notes):
-    title = input("Enter note title: ").strip().capitalize()
-    content = input("Enter note content: ").strip()
+    title = input("Enter note title: ").lower()
+    content = input("Enter note content: ")
     notes[title] = content
     print("Note added.")
 
@@ -41,7 +41,7 @@ def view_notes(notes):
 
 
 def remove_note(notes):
-    title = input("Enter note title to remove: ").strip().capitalize()
+    title = input("Enter note title to remove: ").lower()
     if title in notes:
         del notes[title]
         print(f"Note '{title}' has been removed.")
@@ -61,7 +61,7 @@ def view_tasks(tasks):
         print("No tasks available.")
     else:
         for item in tasks:
-            print(f"- {item}")
+            print(f"- {item.capitalize()}")
 
 
 def remove_task(tasks):
