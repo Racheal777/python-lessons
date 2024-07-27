@@ -48,19 +48,20 @@ from random import randint
 def guess_the_number():
     lower = 1
     higher = 100
+    count = 0
 
     secret_number = randint(lower, higher)
 
-    while True:
-
+    while count < 5:
+        count += 1
         print(f'secret {secret_number}')
-
 
         try:
             guess = int(input('Enter your guess > '))
 
             if guess == secret_number:
                 print("You are right, congrats")
+                print(f"number of count is {count}")
                 break
             elif guess != secret_number:
                 if guess > 100 or guess < 1:
@@ -73,5 +74,5 @@ def guess_the_number():
                     print('Number not in range')
         except ValueError:
             print(f'enter a whole  number between {lower} and {higher}')
-
+    print('you lost')
 guess_the_number()
