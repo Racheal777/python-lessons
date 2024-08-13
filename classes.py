@@ -44,6 +44,8 @@ class Student:
     def introduce_self(self):
         return f"Hello my name is {self.name}, i am {self.age}. my school{self.school_name},  i am in grade {self.grade}"
 
+    def class_method(self):
+        print('class method')
     def get_grade(self):
         return self.grade
 
@@ -54,3 +56,4 @@ student2 = Student("isaac", 25, 6)
 print(student2.introduce_self())
 print(student1.introduce_self())
 print(student2.get_grade())
+print(student2.class_method())
